@@ -1,12 +1,16 @@
 import React from 'react';
-import Root from './Root'
+
+
+function Hate(fav){
+return <h1>motherfucker{fav}</h1>
+}
 
 
 function App() {
   return (
     <div className="App">
       <h3>hello!!</h3>
-      <Root />
+      <Hate  fav="satans" />
     </div>
   );
 }
