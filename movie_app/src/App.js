@@ -20,7 +20,7 @@ componentDidMount(){
 }
 
 render(){
-  const {isLoading, movies} = this.state;
+const {isLoading, movies} = this.state;
 return <section className="container">
   {isLoading ? <div className="loader">
     <span className="loader__text">Loading...</span>
