@@ -1,26 +1,26 @@
 import React from 'react';
+import axios from 'axios';
 
 class App extends React.Component{
-  state={
-    count:0
-  };
-  add = () => {
-    this.setState(current => ({ count: current.count + 1 }))
-  };
-  min = () => {
-    this.setState(current => ({ count: current.count - 1 }))
-  };
-  render(){
-  return <div>
-    <h1>The num is : {this.state.count}</h1>
-    <button onClick={this.add}>Add</button>
-    <button onClick={this.min}>Min</button>
-  </div>
-  }
-  
+state = {
+  isLoading: true,
+  moive:[]
+}
+
+getMovie = async() => {
+  const movies = await axios.get("https://yts.mx/api/v2/list_movies.json")
+
 }
 
 
+componentDidMount(){
+  this.getMovie()
+}
+
+render(){
+  const {isLoading} = this.state;
+return <div>{isLoading ? "Loading now.." : "We are ready"}</div>
+}
+}
 
 export default App;
-
